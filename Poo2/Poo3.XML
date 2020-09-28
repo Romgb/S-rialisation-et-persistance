@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Poo3</name>
+    </assembly>
+    <members>
+        <member name="T:Poo3.Salarie">
+            <summary>
+            Type Salarie
+            </summary>
+        </member>
+        <member name="M:Poo3.Salarie.IsNomPrenomValide(System.String)">
+             <summary>
+             Verification de la conformite de la saisie pour les noms et prenoms.
+             Longueur comprise entre 3 et 30 caractères
+             Uniquement composé de lettres
+             </summary>
+             <param name="value"></param>
+             <returns></returns>
+            
+        </member>
+        <member name="M:Poo3.Salarie.IsMatriculeValide(System.String)">
+            <summary>
+            Vérifie que le matricule respecte les règles suivantes
+            Longueur 7 structure nnXXXnnn ou n est un digit et X une lettre
+            </summary>
+            <param name="value">La valeur du matricule</param>
+            <returns></returns>
+        </member>
+        <member name="M:Poo3.Salarie.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:Poo3.Salarie.#ctor(Poo3.Salarie)">
+            <summary>
+            Constructeur de recopie
+            </summary>
+            <param name="salarie"></param>
+        </member>
+        <member name="M:Poo3.Salarie.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructeur d'initialisation partielle
+            </summary>
+            <param name="nom"></param>
+            <param name="prenom"></param>
+            <param name="matricule"></param>
+        </member>
+        <member name="M:Poo3.Salarie.Finalize">
+            <summary>
+            Destructeur pour tests
+            </summary>
+        </member>
+        <member name="M:Poo3.Salarie.ToString">
+            <summary>
+            Chaine representant l'objet instancié.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Poo3.Salarie.Equals(System.Object)">
+            <summary>
+            Compare deux objets pour déterminer l'égalité
+            De type Salarie et même matricule
+            </summary>
+            <returns>Vrai si les deux objets sont égaux</returns>
+        </member>
+        <member name="M:Poo3.Salarie.Equals(Poo3.Salarie)">
+            <summary>
+            Compare deux salariés pour déterminer l'égalité
+            Même matricule
+            </summary>
+            <param name="salarie"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Poo3.Salarie.GetHashCode">
+            <summary>
+            Une des règles de conception veut que l'on modifie la méthode GetHashCode
+            Si la méthode Equals est modifiée
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Poo3.Salarie.NombreInstances">
+            <summary>
+            Nombre d'instances en mémoire
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.Matricule">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.Nom">
+            <summary>
+            Nom du salarié
+            Longueur comprise entre 3 et 30 caractères. Ni caractères spéciaux ni chiffres 
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.Prenom">
+            <summary>
+            Prenom 
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.SalaireBrut">
+            <summary>
+            Salaire brut
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.TauxCS">
+            <summary>
+            Taux de charges sociales affecté
+            Ne peut excéder 0.6
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.DateNaissance">
+            <summary>
+            Date de naissance
+            Ne peut être antérieure au 1er janvier 1900 et postérieure à J -15 ans
+            </summary>
+        </member>
+        <member name="P:Poo3.Salarie.SalaireNet">
+            <summary>
+            Salaire touché par le salarie apres déduction des charges sociales
+            </summary>
+        </member>
+        <member name="M:Poo3.Commercial.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+        <member name="M:Poo3.Commercial.#ctor(System.String,System.String,System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Constructeur d'initialisation
+            </summary>
+        </member>
+        <member name="M:Poo3.Commercial.#ctor(Poo3.Commercial)">
+            <summary>
+            Constructeur de recopie 
+            </summary>
+            <param name="commercial"></param>
+        </member>
+        <member name="M:Poo3.Commercial.ToString">
+            <summary>
+            Renvoie une chaine avec la liste des valeurs des propriétés
+            </summary>
+        </member>
+        <member name="P:Poo3.Commercial.ChiffreAffaire">
+            <summary>
+            Chiffre d'affaire pour calcul de la rémunération
+            </summary>
+        </member>
+        <member name="P:Poo3.Commercial.Commission">
+            <summary>
+            Commpission pour calcul de la rémunération
+            </summary>
+        </member>
+        <member name="P:Poo3.Commercial.SalaireNet">
+            <summary>
+            Salaire net après déduction des charges sociales
+            </summary>
+        </member>
+        <member name="T:Poo3.Salaries">
+            <summary>
+            Ensemble des salaries
+            </summary>
+        </member>
+        <member name="M:Poo3.Salaries.Add(Poo3.Salarie)">
+            <summary>
+            Ajouter un salarié
+            </summary>
+            <param name="salarie"></param>
+        </member>
+        <member name="M:Poo3.Salaries.Extraire(System.String)">
+            <summary>
+            Extrait le salarié ayant le numéro de matricule fourni en argument
+            </summary>
+            <param name="matricule"></param>
+            <returns>Un salarié ou null si non trouvé</returns>
+        </member>
+        <member name="M:Poo3.Salaries.ExtraireSalaries(System.String)">
+            <summary>
+            Extrait la liste des salariés qui répondent au fitre
+            </summary>
+            <param name="nom">Début du nom</param>
+            <returns></returns>
+        </member>
+        <member name="M:Poo3.Salaries.#ctor">
+            <summary>
+            Constructeur par défaut
+            </summary>
+        </member>
+    </members>
+</doc>
