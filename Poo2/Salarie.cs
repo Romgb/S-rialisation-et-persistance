@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Globalization;
 
+
 [assembly: CLSCompliant(true)]
 namespace Poo3
 {
-   
+
     /// <summary>
     /// Type Salarie
     /// </summary>
-
+    /// 
+    [Serializable()]
     public class Salarie
     {
 
@@ -26,7 +28,31 @@ namespace Poo3
         private DateTime _dateNaissance;
         #endregion
 
-       
+
+        // Déclaration du type Delegue
+        public delegate void ChangementSalaireEventHandler(object sender, ChangementSalaireEventArgs e);
+
+        // Evenement du type Delegue
+        public event ChangementSalaireEventHandler ChangementSalaire;
+
+        // Méthode du type Changement de Salaire
+        protected virtual void OnChangementSalaire(ChangementSalaireEventArgs e)
+        {
+            ChangementSalaire?.Invoke(this, e);
+        }
+
+        public decimal SalaireBrut
+        {
+            get { return (this._salaireBrut); }
+            set
+            {
+                decimal ancienSalaire = _salaireBrut;
+                OnChangementSalaire(new ChangementSalaireEventArgs(_salaireBrut, value));
+                this._salaireBrut = value;
+
+            }
+
+        }
         #region Propriétés
         /// <summary>
         /// Nombre d'instances en mémoire
@@ -75,19 +101,7 @@ namespace Poo3
         /// <summary>
         /// Salaire brut
         /// </summary>
-        public decimal SalaireBrut
-        {
-            get { return (this._salaireBrut); }
-            set
-            {
-                decimal ancienSalaire = _salaireBrut;
-                this._salaireBrut = value;
-               
-               
-
-            }
-
-        }
+  
 
        
         /// <summary>
@@ -120,7 +134,7 @@ namespace Poo3
             get { return (this._dateNaissance); }
             set
             {
-                if (value.CompareTo(new DateTime(1900, 01, 01)) < 0) throw new Exception(String.Format(CultureInfo.CurrentCulture, "La Date de naissance {0:d} ne peut être antérieure au 1 janvier 1900", value));
+                //if (value.CompareTo(new DateTime(1900, 01, 01)) < 0) throw new Exception(String.Format(CultureInfo.CurrentCulture, "La Date de naissance {0:d} ne peut être antérieure au 1 janvier 1900", value));
                 if (value.CompareTo(DateTime.Today.AddYears(-15)) > 0) throw new Exception(String.Format(CultureInfo.CurrentCulture, "La Date de naissance {0:d} ne peut être postérieure au {1:d}", value, DateTime.Today.AddYears(-15)));
                 else this._dateNaissance = value;
             }

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Xml.Serialization;
 
 namespace Poo3
 {
+    [Serializable()]
     /// <summary>
     /// Commercial est une spécialisation de salarié
     /// </summary>

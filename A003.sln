@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poo3", "Poo2\Poo3.csproj", "{248FF0DB-5B24-4592-A9ED-0771C9774597}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPoo3", "TestPoo2\TestPoo3.csproj", "{B35B4A53-4AB4-4336-972E-44264114659E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulairesSalaries", "FormulairesSalaries\FormulairesSalaries.csproj", "{EECB8FED-4F95-45DE-AC65-A49A75F6ECBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,8 +23,15 @@ Global
 		{B35B4A53-4AB4-4336-972E-44264114659E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B35B4A53-4AB4-4336-972E-44264114659E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B35B4A53-4AB4-4336-972E-44264114659E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECB8FED-4F95-45DE-AC65-A49A75F6ECBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECB8FED-4F95-45DE-AC65-A49A75F6ECBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECB8FED-4F95-45DE-AC65-A49A75F6ECBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECB8FED-4F95-45DE-AC65-A49A75F6ECBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {833CFF5F-440F-4B17-AD02-7C3B8AE0506A}
 	EndGlobalSection
 EndGlobal

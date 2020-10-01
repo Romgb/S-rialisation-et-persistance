@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 //using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Poo3
 {
+    [Serializable()]
+    [XmlInclude(typeof(Commercial))]
     public class Salaries : List<Salarie>
     {
         /// <summary>
@@ -20,7 +24,8 @@ namespace Poo3
                 if (item.Equals(salarie))
                 {
                     trouve = true;
-                    break;
+                    throw new ApplicationException("Salarié déjà existant");
+                    
                 }
             }
             if (!trouve)
@@ -37,6 +42,10 @@ namespace Poo3
             if (!this.Contains(salarie))
             {
                 base.Add(salarie);
+            }
+            else
+            {
+                throw new ApplicationException("Salarié déjà existant");
             }
         }
         public Salarie Extraire(string matricule)
@@ -70,7 +79,5 @@ namespace Poo3
             }
             
         }
-
-        
     }
 }
